@@ -1,0 +1,140 @@
+1.C:\Users\Windows>D:
+
+D:\>Cd Downloads
+
+D:\Downloads>Cd git-homework-1-Myster
+
+D:\Downloads>Cd git-homework-1-Myster>git config --global user.name Myster
+
+D:\Downloads>Cd git-homework-1-Myster>git config --global user.email huunguyen332007@gmail.com
+
+D:\Downloads>Cd git-homework-1-Myster>mkdir ex3
+
+D:\Downloads\git-homework-1-Myster>Cd ex3
+
+D:\Downloads\git-homework-1-Myster\ex3>mkdir dir1
+
+D:\Downloads\git-homework-1-Myster\ex3>mkdir dir2
+
+D:\Downloads\git-homework-1-Myster\ex3>type nul > HelloWorld.txt
+
+D:\Downloads\git-homework-1-Myster\ex3>copy HelloWorld.txt dir1\
+        1 file(s) copied.
+
+D:\Downloads\git-homework-1-Myster\ex3>copy /-Y HelloWorld.txt dir1\
+Overwrite dir1\HelloWorld.txt? (Yes/No/All): Y
+        1 file(s) copied.
+
+D:\Downloads\git-homework-1-Myster\ex3>ren HelloWorld.txt Hi.txt
+
+D:\Downloads\git-homework-1-Myster\ex3>move Hi.txt dir2\
+        1 file(s) moved.
+
+2.Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3 (main)
+$ echo ggg> dir2/Hi.txt
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3 (main)
+$ ln dir2/Hi.txt Hi-hard
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3 (main)
+$ ln dir2/Hi.txt dir1/Hi-hard
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3 (main)
+$ ln dir2/Hi.txt dir2/Hi-hard
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3 (main)
+$ ln -s dir2/Hi.txt Hi-sym
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3 (main)
+$ rm Hi-hard
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3 (main)
+$ rm dir2/Hi.txt
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3 (main)
+$ ls -li
+total 1
+1125899907223889 -rw-r--r-- 1 Windows 197121 4 Sep 10 21:17 Hi-sym
+3377699720909113 drwxr-xr-x 1 Windows 197121 0 Sep 10 21:17 dir1/
+2251799814066490 drwxr-xr-x 1 Windows 197121 0 Sep 10 21:19 dir2/
+
+3.Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3 (main)
+$ ls /bin /usr/bin | sort | uniq | wc -l
+381
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3 (main)
+$ ls /bin /usr/bin | sort | uniq | grep "zip"
+bunzip2.exe*
+bzip2.exe*
+bzip2recover.exe*
+funzip.exe*
+gunzip*
+gzip.exe*
+unzip.exe*
+unzipsfx.exe*
+zipgrep*
+zipinfo.exe*
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3 (main)
+$ seq -f "gggg" %g 1 30 > sample.txt
+seq: format ‘gggg’ has no % directive
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3 (main)
+$ Yes "gggg" | head -n 30 > sample.txt
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3 (main)
+$ ls -l | tee full_listing.txt
+total 1
+drwxr-xr-x 1 Windows 197121   0 Sep 10 21:17 dir1/
+drwxr-xr-x 1 Windows 197121   0 Sep 10 21:19 dir2/
+-rw-r--r-- 1 Windows 197121 150 Sep 10 21:36 sample.txt
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3 (main)
+$ cat full_listing.txt
+total 1
+drwxr-xr-x 1 Windows 197121   0 Sep 10 21:17 dir1/
+drwxr-xr-x 1 Windows 197121   0 Sep 10 21:19 dir2/
+-rw-r--r-- 1 Windows 197121 150 Sep 10 21:36 sample.txt
+
+4.Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3 (main)
+$ mkdir permissions
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3 (main)
+$ cd permissions/
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3/permissions (main)
+$ touch secrect.txt shared.txt public.txt
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3/permissions (main)
+$ chmod 600 secrect.txt
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3/permissions (main)
+$ chmod 663 shared shared.txt
+chmod: cannot access 'shared': No such file or directory
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3/permissions (main)
+$ chmod 663 shared.txt
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3/permissions (main)
+$ chmod 777 public.txt
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3/permissions (main)
+$ ls -l
+total 0
+-rw-r--r-- 1 Windows 197121 0 Sep 10 21:40 public.txt
+-rw-r--r-- 1 Windows 197121 0 Sep 10 21:40 secrect.txt
+-rw-r--r-- 1 Windows 197121 0 Sep 10 21:40 shared.txt
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3/permissions (main)
+$ umask
+0022
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3/permissions (main)
+$ touch test_umask.txt
+
+Windows@Myster MINGW64 /d/Downloads/git-homework-1-Myster/ex3/permissions (main)
+$ ls -l test_umask.txt
+-rw-r--r-- 1 Windows 197121 0 Sep 10 21:42 test_umask.txt
+
+
+
